@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this is a page</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/app.css"  media="screen,projection"/>
+</head>
+<body>
+    <div class="container main">
+        <div class="row">
+            <div class="col s12 m3">
+                <div class="card form-card">
+                    <h6>Generate Account Numbers</h6>
+
+                    <form action="" id="f-g-acounts">
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input name="accountName" id="accountName" type="text" class="validate" required>
+                              <label for="accountName">Account Name</label>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input name="phoneNumber" id="phoneNumber" type="text" class="validate" required>
+                              <label for="phoneNumber">Phone Number</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn waves-effect waves-dark red">Generate accounts</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col s12 m3">
+                <div class="card form-card">
+                    <h6>Credit Account Number</h6>
+
+                    <form id="f-credit">
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input name="accountNumber" id="accountNumber" type="text" class="validate" required>
+                              <label for="accountNumber">Beneficiary Account Number</label>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input name="cAmount" id="cAmount" type="text" class="validate" required>
+                              <label for="cAmount">Transaction Amount</label>
+                            </div>
+                        </div>
+    
+                        <button type="submit" class="btn waves-effect waves-dark red">Credit account</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col s12 m3">
+                <div class="card form-card">
+                    <h6>Debit Account Number</h6>
+
+                    <form id="f-debit">
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input name="dAccountNumber" id="dAccountNumber" type="text" class="validate" required>
+                              <label for="dAccountNumber">Debit Account Number</label>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input name="dAmount" id="dAmount" type="text" class="validate" required>
+                              <label for="dAmount">Transaction Amount</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn waves-effect waves-dark red">Debit account</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col s12 m3">
+                <div class="card form-card">
+                    <h6>Get Transactions</h6>
+
+                    <form id="t-form">
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <input name="tAccountNumber" id="tAccountNumber" type="text" class="validate">
+                              <label for="tAccountNumber">Account Number</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn waves-effect waves-dark red">View Transactions</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr/>
+
+        <div class="row card">
+           
+            <div class="col s12 m5">
+                <h6>Account information</h6>
+                <table class="striped responsive-table">
+                    <thead>
+                      <tr>
+                          <th>Account Name</th>
+                          <th>Phone Number</th>
+                          <th>Account Number</th>
+                          <th>Available Balance (#)</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody id="a-info-table-body"></tbody>
+                  </table>
+            </div>
+
+            <div class="col s12 m7">
+                <h6>Transaction information</h6>
+                <table class="striped responsive-table">
+                    <thead>
+                      <tr>
+                          <th>Account Name</th>
+                          <th>Account Number</th>
+                          <th>Transaction Amount</th>
+                          <th>Transaction Status</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody id="t-info-table-body"></tbody>
+                  </table>
+            </div>
+        </div>
+        
+    </div>
+
+<script src="js/banking.js"></script>
+<script src="js/materialize.min.js"></script>
+</body>
+</html>

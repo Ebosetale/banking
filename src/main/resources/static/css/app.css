@@ -1,0 +1,13 @@
+body{
+    background-color: #d7d9dc;
+
+}
+.main{
+    margin-top: 15px;
+}
+.card{
+    padding: 20px;
+}
+.form-card{
+    min-height: 350px !important;
+}
