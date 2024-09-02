@@ -31,13 +31,6 @@ class AccountControllerTest {
     @Autowired
     private AccountController _accountController;
 
-    /*@BeforeEach
-    void setUp() {
-        //_accountService.
-
-        _accountController = new AccountController(_accountService, _mapper);
-    }*/
-
     @Test
     void loadAccounts()  {
 
@@ -45,8 +38,11 @@ class AccountControllerTest {
                                 .accountName("test")
                                 .phoneNumber("1234567871")
                                 .build();
-        var accountRes = _accountService.generateAccounts(accountDto);
-        assertThat(accountRes).isNotEmpty();
+        var genAccountRes = _accountController.createAccount(accountDto);
+        assertThat(genAccountRes).isNotEmpty();
+
+        var accountsRes = _accountController.loadAccounts();
+        assertThat(accountsRes).isNotNull().isNotEmpty();
 
     }
 

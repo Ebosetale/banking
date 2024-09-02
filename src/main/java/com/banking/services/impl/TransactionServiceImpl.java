@@ -81,10 +81,10 @@ public class TransactionServiceImpl implements ITransactionService {
         Account selectedAccount = getAccount(accountNumber);
         double amount = getRandomAmount();
 
-        Transaction newTransaction = new Transaction();
-        newTransaction.setAccountNumber(accountNumber);
-        newTransaction.setAmount(-amount);
-        newTransaction.setAccountName(selectedAccount.getAccountName());
+        Transaction newTransaction = Transaction.builder()
+                .accountNumber(accountNumber)
+                .amount(-amount).accountName(selectedAccount.getAccountName())
+                .build();
 
         if(selectedAccount.getAvailableBalance() >= amount){
             selectedAccount.setAvailableBalance(selectedAccount.getAvailableBalance() - amount);
