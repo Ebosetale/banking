@@ -18,7 +18,8 @@ phases:
       - echo "we will run some tests"
       - echo $JAVA_HOME
       - java --version
-      - ls /usr/lib/jvm//usr/lib/jvm/
+      - ls /usr/lib/jvm/
+      - ls /usr/lib/jvm/java-17-amazon-correto/jre/
       - sudo ln -s $JAVA_HOME/jre /usr/lib/jvm/java-17-amazon-correto/jre/bin/java
       - mvn test
       - ls
