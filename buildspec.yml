@@ -14,12 +14,14 @@ phases:
         commands:
             - echo "we are in the build block"
             - echo "we will run some tests"
-            - export JAVA_HOME="$JAVA_HOME/jre"
             - echo $JAVA_HOME
-            - mvn --version
-            - sudo mvn package
+            - mvn package
     post_build:
         commands:
             - echo "we are in the post build phase"
             - ls
+artifacts:
+    files:
+        - targets/*.jar
+        -discard-paths: yes
             
