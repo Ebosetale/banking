@@ -1,20 +1,24 @@
 version: 0.2
-phases: 
+phases:
   install:
     runtime-versions:
-    java: coretto11
+      java: 17
+    commands:
+      - echo "installing something"
+      - sudo yum install maven
+      - java --version
   pre_build:
-    commands: 
-      - echo In the pre_build phase...
-      - mvn test
-  build: 
-    commands: 
-      - echo Build completed on `date`
-      - mvn package  
+    commands:
+      - echo "we are in the pre build phase"
+  build:
+    commands:
+      - echo "we are in the build block"
+      - echo "we will run some tests"
+      - mvn package
   post_build:
     commands:
-      - echo Build completed on `data`
+      - echo "we are in the post build phase"
 artifacts:
   files:
-    - target/*.jar
-  discard-paths: yes
+    - targets/*.jar
+  discard-paths: 'yes'
