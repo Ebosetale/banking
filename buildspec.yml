@@ -14,18 +14,15 @@ phases:
       - echo $PATH
   build:
     commands:
-      - echo "we are in the build block"
-      - echo "we will run some tests"
       - java --version
-      - ls /usr/lib/jvm/java-17/
-      - ls /usr/lib/jvm/java-17/bin
       - export JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64/
       - mvn test
-      - ls
+      - mvn package
   post_build:
     commands:
       - echo "we are in the post build phase"
+      - ls target/
 artifacts:
   files:
-    - targets/*.jar
+    - target/*.jar
   discard-paths: 'yes'
