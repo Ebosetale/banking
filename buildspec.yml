@@ -13,11 +13,16 @@ phases:
   pre_build:
     commands:
       - echo "we are in the pre build phase"
+      - export PATH=$JAVA_HOME/jre/bin:$PATH
+      - echo $JAVA_HOME
+      - echo $PATH
   build:
     commands:
       - echo "we are in the build block"
       - echo "we will run some tests"
-      - mvn package
+      - sudo ln -s /usr/lib/jvm/java-17-amazon-correto/jre /usr/lib/jvm/java-17-amazon-correto/jre/bin/java
+      - mvn test
+      - ls
   post_build:
     commands:
       - echo "we are in the post build phase"
