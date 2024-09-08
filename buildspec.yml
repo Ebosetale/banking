@@ -18,9 +18,10 @@ phases:
       - echo "we will run some tests"
       - echo $JAVA_HOME
       - java --version
-      - ls /usr/lib/jvm/
-      - ls /usr/lib/jvm/java-17-amazon-correto/jre/
-      - sudo ln -s $JAVA_HOME/jre /usr/lib/jvm/java-17-amazon-correto/jre/bin/java
+      - ls /usr/lib/jvm/java-17-openjdk
+      - ls /usr/lib/jvm/java-17-openjdk/jre/
+      - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
+      - sudo ln -s $JAVA_HOME/jre $JAVA_HOME/jre/bin/java
       - mvn test
       - ls
   post_build:
