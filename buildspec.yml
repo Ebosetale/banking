@@ -19,8 +19,7 @@ phases:
       - java --version
       - ls /usr/lib/jvm/java-17/
       - ls /usr/lib/jvm/java-17/bin
-      - sudo update-alternatives --config java
-      - sudo update-alternatives --config javac
+      - export JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64/
       - mvn test
       - ls
   post_build:
