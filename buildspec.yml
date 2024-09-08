@@ -16,11 +16,10 @@ phases:
     commands:
       - echo "we are in the build block"
       - echo "we will run some tests"
-      - echo $JAVA_HOME
       - java --version
-      - ls /usr/lib/jvm/java-17-openjdk
-      - ls /usr/lib/jvm/java-17-openjdk/jre/
-      - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
+      - ls /usr/lib/jvm/java-17/
+      - ls /usr/lib/jvm/java-17/jre/
+      - export JAVA_HOME=/usr/lib/jvm/java-17/
       - sudo ln -s $JAVA_HOME/jre $JAVA_HOME/jre/bin/java
       - mvn test
       - ls
