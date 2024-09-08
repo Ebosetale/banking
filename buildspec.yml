@@ -6,7 +6,7 @@ phases:
             java: 17
         commands:
             - echo "installing something"
-            - sudo yum install maven
+            - sudo yum install maven -y
             - java --version
     pre_build:
         commands: 
