@@ -14,6 +14,8 @@ phases:
         commands:
             - echo "we are in the build block"
             - echo "we will run some tests"
+            - export JAVA_HOME="$JAVA_HOME/jre"
+            - echo $JAVA_HOME
             - mvn --version
             - sudo mvn package
     post_build:
