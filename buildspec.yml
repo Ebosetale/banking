@@ -21,7 +21,6 @@ phases:
       - ls /usr/lib/jvm/java-17/bin
       - sudo update-alternatives --config java
       - sudo update-alternatives --config javac
-      - sudo ln -s $JAVA_HOME/bin $JAVA_HOME/jre/bin/java
       - mvn test
       - ls
   post_build:
