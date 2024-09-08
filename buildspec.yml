@@ -7,7 +7,6 @@ phases:
         commands:
             - echo "installing something"
             - sudo yum install maven -y
-            - java --version
     pre_build:
         commands: 
             - echo "we are in the pre build phase"
@@ -15,8 +14,9 @@ phases:
         commands:
             - echo "we are in the build block"
             - echo "we will run some tests"
-            -
+            - ./mvn package
     post_build:
         commands:
             - echo "we are in the post build phase"
+            - ls
             
