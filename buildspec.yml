@@ -6,15 +6,12 @@ phases:
     commands:
       - echo "installing something"
       - sudo yum install maven -y
-      - java --version
   pre_build:
     commands:
       - echo "we are in the pre build phase"
       - export PATH=$JAVA_HOME/jre/bin:$PATH
-      - echo $PATH
   build:
     commands:
-      - java --version
       - export JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64/
       - mvn test
       - mvn package
