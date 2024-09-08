@@ -14,7 +14,7 @@ phases:
         commands:
             - echo "we are in the build block"
             - echo "we will run some tests"
-            - ./mvn package
+            - ./mvnw package
     post_build:
         commands:
             - echo "we are in the post build phase"
