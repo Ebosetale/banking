@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: 17
+      java: corretto17
     commands:
       - echo "installations"
       - sudo yum install maven -y
@@ -10,7 +10,7 @@ phases:
     on-failure: ABORT
     commands:
       - echo "we are in the pre build phase"
-      - export JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64/
+      - ls /usr/lib/jvm/
   build:
     on-failure: ABORT
     commands:
