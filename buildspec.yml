@@ -7,10 +7,12 @@ phases:
       - echo "installations"
       - sudo yum install maven -y
   pre_build:
+    on-failure: ABORT
     commands:
       - echo "we are in the pre build phase"
       - export JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64/
   build:
+    on-failure: ABORT
     commands:
       - mvn package
   post_build:
