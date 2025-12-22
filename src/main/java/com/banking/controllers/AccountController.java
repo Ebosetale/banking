@@ -17,12 +17,10 @@ import java.util.stream.Collectors;
 @RequestMapping(path = "api/accounts", produces = "application/json")
 public class AccountController {
 
-    private IAccountService _accountService;
-    private ModelMapper _mapper;
+    private final IAccountService _accountService;
 
-    public AccountController(IAccountService accountService, ModelMapper mapper) {
+    public AccountController(IAccountService accountService) {
         _accountService = accountService;
-        _mapper = mapper;
     }
 
     @GetMapping()
@@ -38,10 +36,7 @@ public class AccountController {
     @ResponseStatus(HttpStatus.CREATED)
     public List<Account> createAccount(@RequestBody AccountDto accountDto){
         ConcurrentHashMap<String, Account> accounts = _accountService.generateAccounts(accountDto);
-        List<Account> accountNumbers = accounts.values()
-                                              .stream()
-                                              .collect(Collectors.toList());
-        return accountNumbers;
+        return new ArrayList<>(accounts.values());
 
     }
 }

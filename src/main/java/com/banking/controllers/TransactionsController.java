@@ -14,12 +14,10 @@ import java.util.Optional;
 @RestController
 @RequestMapping(path = "api/transactions", produces = "application/json")
 public class TransactionsController {
-    private ITransactionService _transactionService;
-    private ModelMapper _mapper;
+    private final ITransactionService _transactionService;
 
-    public TransactionsController(ITransactionService transactionService, ModelMapper mapper) {
+    public TransactionsController(ITransactionService transactionService) {
         _transactionService = transactionService;
-        _mapper = mapper;
     }
 
     @RequestMapping(value = {"", "/{accountNumber}"}, method = RequestMethod.GET)
